@@ -7,8 +7,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@
-      - uses: ./
+      - uses: actions/checkout@3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '20'
       - name: test read
         run: |
-          ./index.js
+          node index.js
